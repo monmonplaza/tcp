@@ -53,23 +53,28 @@ function counters(limit, target) {
   }, 10 / 1000);
 }
 
+let objvideos = new counters(76, videos);
+let objsubscribers = new counters(435, subscibers);
+let objviews = new counters(500, views);
+let objdailySubs = new counters(100, dailySubs);
+
 //SCROLL MAGIC
-var controller = new ScrollMagic.Controller();
-// create a scene
-new ScrollMagic.Scene({
-  // duration: 100, // the scene should last for a scroll distance of 100px
-  // offset: 50 // start this scene after scrolling for 50px
-  triggerElement: "#counter_block",
-  triggerHook: 0.95,
-  reverse: false
-})
-  .on("start", function() {
-    let objvideos = new counters(76, videos);
-    let objsubscribers = new counters(435, subscibers);
-    let objviews = new counters(500, views);
-    let objdailySubs = new counters(100, dailySubs);
-  })
-  // .addIndicators() // add indicators (requires plugin)
-  .addTo(controller); // assign the scene to the controller
+// var controller = new ScrollMagic.Controller();
+// // create a scene
+// new ScrollMagic.Scene({
+//   // duration: 100, // the scene should last for a scroll distance of 100px
+//   // offset: 50 // start this scene after scrolling for 50px
+//   triggerElement: "#counter_block",
+//   triggerHook: 0.95,
+//   reverse: false
+// })
+//   .on("start", function() {
+//     let objvideos = new counters(76, videos);
+//     let objsubscribers = new counters(435, subscibers);
+//     let objviews = new counters(500, views);
+//     let objdailySubs = new counters(100, dailySubs);
+//   })
+//   // .addIndicators() // add indicators (requires plugin)
+//   .addTo(controller); // assign the scene to the controller
 
 //const bars = document.querySelectorAll(".bar");
