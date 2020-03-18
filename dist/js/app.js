@@ -21,6 +21,17 @@ function removeActiveShow(x, z) {
   });
 }
 
+//SKILL BARS
+loadSkillBar();
+function loadSkillBar() {
+  const bars = document.querySelectorAll(".bar-percent");
+
+  bars.forEach(function(bar) {
+    let percent = bar.getAttribute("data-bar");
+    bar.style.width = percent * 10 + "%";
+  });
+}
+
 // animated counter
 
 const videos = document.querySelector("#videos");
@@ -58,17 +69,7 @@ new ScrollMagic.Scene({
     let objviews = new counters(500, views);
     let objdailySubs = new counters(100, dailySubs);
   })
-  //.addIndicators() // add indicators (requires plugin)
+  // .addIndicators() // add indicators (requires plugin)
   .addTo(controller); // assign the scene to the controller
 
 //const bars = document.querySelectorAll(".bar");
-
-loadSkillBar();
-function loadSkillBar() {
-  const bars = document.querySelectorAll(".bar-percent");
-
-  bars.forEach(function(bar) {
-    let percent = bar.getAttribute("data-bar");
-    bar.style.width = percent * 10 + "%";
-  });
-}
