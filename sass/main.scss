@@ -107,6 +107,9 @@ span {
   @include mq(768px) {
     width: 85%;
   }
+  @include mq(414px) {
+    width: 95%;
+  }
 }
 
 .banner {
@@ -257,10 +260,18 @@ span {
     }
     &__content {
       text-align: center;
+      @include mq(414px) {
+        width: 100%;
+      }
 
       i {
         color: $primary-color;
         font-size: 4rem;
+      }
+      iframe {
+        @include mq(414px) {
+          width: 100%;
+        }
       }
     }
   }
@@ -294,9 +305,12 @@ span {
       }
       @include mq(414px) {
         margin-right: 0rem;
+        min-height: 10rem;
+        background-color: $primary-color;
       }
       .imgbox-wrapper {
         // position: absolute;
+
         img {
           display: block;
           height: 51rem;
@@ -304,6 +318,10 @@ span {
           object-fit: cover;
           filter: grayscale(1);
           transition: 0.5s ease;
+          @include mq(414px) {
+            display: none;
+            height: 3rem;
+          }
         }
         &__info {
           position: absolute;
@@ -323,6 +341,10 @@ span {
           }
         }
       }
+      &.active-profile {
+        border: 3px solid #ec8e35;
+      }
+
       &.active-profile .imgbox-wrapper img {
         filter: grayscale(0);
       }
@@ -349,6 +371,19 @@ span {
       font-weight: bold;
       color: $primary-color;
       text-transform: uppercase;
+    }
+
+    img {
+      display: none;
+
+      @include mq(414px) {
+        display: block;
+        margin: 2rem auto;
+      }
+    }
+
+    ul li {
+      list-style: disc;
     }
 
     .skill-group {
@@ -438,6 +473,9 @@ span {
     &__item iframe {
       width: 80%;
       margin: 0 auto;
+      @include mq(414px) {
+        width: 100%;
+      }
     }
     .section-headings {
       margin-bottom: 1rem;
