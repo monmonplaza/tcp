@@ -42,56 +42,6 @@ function counters(limit, target) {
   }, 10 / 1000);
 }
 
-function skillbar(css, html, js, php, ps, ai, xd) {
-  this.css = css;
-  this.html = html;
-  this.js = js;
-  this.php = php;
-  this.ps = ps;
-  this.ai = ai;
-  this.xd = xd;
-  this.createSkillBar = function() {
-    let skillArray = [
-      "HTML",
-      "CSS",
-      "Javascript",
-      "PHP",
-      "Photoshop",
-      "Illustrator",
-      "XD"
-    ];
-
-    let percent = [
-      this.html,
-      this.css,
-      this.js,
-      this.php,
-      this.ps,
-      this.ai,
-      this.xd
-    ];
-
-    let html = "";
-
-    for (let i = 0; i <= skillArray; i++) {
-      html = `
-      <div class="skill-group">
-        <p>${skillArray[i]}</p>
-        <div class="bar">
-          <div class="bar-percent" style="width=${percent[i]}"></div>
-        </div>
-      </div>`;
-    }
-
-    document.querySelector(".skill-wrapper").innerHTML += html;
-  };
-}
-
-let monmon = new skillbar();
-document.querySelector("#tab-4").addEventListener("click", function() {
-  monmon.createSkillBar(54, 76, 34, 86, 23, 54);
-});
-
 //SCROLL MAGIC
 var controller = new ScrollMagic.Controller();
 // create a scene
@@ -108,5 +58,17 @@ new ScrollMagic.Scene({
     let objviews = new counters(500, views);
     let objdailySubs = new counters(100, dailySubs);
   })
-  .addIndicators() // add indicators (requires plugin)
+  //.addIndicators() // add indicators (requires plugin)
   .addTo(controller); // assign the scene to the controller
+
+//const bars = document.querySelectorAll(".bar");
+
+loadSkillBar();
+function loadSkillBar() {
+  const bars = document.querySelectorAll(".bar-percent");
+
+  bars.forEach(function(bar) {
+    let percent = bar.getAttribute("data-bar");
+    bar.style.width = percent * 10 + "%";
+  });
+}

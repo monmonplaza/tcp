@@ -37,6 +37,8 @@ p, li, a, span { font-size: 1.6rem; }
 
 @media screen and (max-width: 768px) { .container { width: 85%; } }
 
+@media screen and (max-width: 414px) { .container { width: 95%; } }
+
 .banner { height: 100vh; position: relative; }
 
 .banner__blue-block { background: #00177d; height: inherit; width: 50%; position: absolute; top: 0; right: 0; z-index: -1; }
@@ -97,7 +99,11 @@ p, li, a, span { font-size: 1.6rem; }
 
 .playlist__gridbox__content { text-align: center; }
 
+@media screen and (max-width: 414px) { .playlist__gridbox__content { width: 100%; } }
+
 .playlist__gridbox__content i { color: #00177d; font-size: 4rem; }
+
+@media screen and (max-width: 414px) { .playlist__gridbox__content iframe { width: 100%; } }
 
 .profile { padding: 8rem 0; }
 
@@ -170,6 +176,8 @@ p, li, a, span { font-size: 1.6rem; }
 @media screen and (max-width: 768px) { .about__grid { -ms-grid-columns: (1fr)[1]; grid-template-columns: repeat(1, 1fr); } }
 
 .about__grid__item iframe { width: 80%; margin: 0 auto; }
+
+@media screen and (max-width: 414px) { .about__grid__item iframe { width: 100%; } }
 
 .about__grid .section-headings { margin-bottom: 1rem; }
 
