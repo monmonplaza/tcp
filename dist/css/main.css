@@ -87,7 +87,7 @@ p, li, a, span { font-size: 1.6rem; }
 
 .playlist { padding: 8rem 0; }
 
-.playlist__grid { display: -ms-grid; display: grid; -ms-grid-columns: (minmax(400px, 1fr))[auto-fit]; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); grid-gap: 3rem; }
+.playlist__grid { display: -ms-grid; display: grid; -ms-grid-columns: (minmax(400px, 1fr))[auto-fill]; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); grid-gap: 3rem; }
 
 @media screen and (max-width: 768px) { .playlist__grid { -ms-grid-columns: (1fr)[1]; grid-template-columns: repeat(1, 1fr); } }
 
