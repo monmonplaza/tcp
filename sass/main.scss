@@ -115,6 +115,9 @@ span {
 .banner {
   height: 100vh;
   position: relative;
+  @include mq(768px) {
+    height: 100%;
+  }
   &__blue-block {
     background: $primary-color;
     height: inherit;
@@ -168,6 +171,7 @@ span {
     @include mq(768px) {
       top: calc(80vh - 28rem);
       width: 80%;
+      display: none;
     }
     @include mq(414px) {
       top: calc(87vh - 28rem);
@@ -212,8 +216,16 @@ span {
     top: 50%;
     transform: translateY(-50%);
     left: calc((15% / 2));
+    z-index: 9999;
     @include mq(768px) {
-      top: 35%;
+      position: relative;
+      top: 0;
+      width: 75%;
+      transform: none;
+      margin: 40px 0;
+    }
+    @media screen and (max-height: 400px) {
+      position: relative;
     }
     &-subheader {
       font-size: 1.6rem;
@@ -228,6 +240,9 @@ span {
       font-weight: 900;
       line-height: 1.2;
       text-transform: uppercase;
+      @include mq(768px) {
+        font-size: 2.5rem;
+      }
     }
   }
 }
@@ -240,9 +255,9 @@ span {
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     grid-gap: 3rem;
 
-    @include mq(768px) {
-      grid-template-columns: repeat(1, 1fr);
-    }
+    // @include mq(768px) {
+    //   grid-template-columns: repeat(1, 1fr);
+    // }
   }
   &__gridbox {
     width: 100%;
@@ -320,6 +335,9 @@ span {
           object-fit: cover;
           filter: grayscale(1);
           transition: 0.5s ease;
+          &:hover {
+            filter: grayscale(0);
+          }
           @include mq(414px) {
             display: none;
             height: 3rem;
