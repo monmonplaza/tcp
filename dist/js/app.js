@@ -4,8 +4,8 @@ const profileContents = document.querySelectorAll(".profile__content");
 runProfile();
 
 function runProfile() {
-  profileLinks.forEach(function(profileLink) {
-    profileLink.addEventListener("click", function() {
+  profileLinks.forEach(function (profileLink) {
+    profileLink.addEventListener("click", function () {
       removeActiveShow(profileLinks, "active-profile");
       this.classList.add("active-profile");
       const content = document.querySelector(`#${this.id}-content`);
@@ -16,7 +16,7 @@ function runProfile() {
 }
 
 function removeActiveShow(x, z) {
-  x.forEach(y => {
+  x.forEach((y) => {
     y.classList.remove(z);
   });
 }
@@ -26,7 +26,7 @@ loadSkillBar();
 function loadSkillBar() {
   const bars = document.querySelectorAll(".bar-percent");
 
-  bars.forEach(function(bar) {
+  bars.forEach(function (bar) {
     let percent = bar.getAttribute("data-bar");
     bar.style.width = percent * 10 + "%";
   });
@@ -40,23 +40,23 @@ const views = document.querySelector("#views");
 const dailySubs = document.querySelector("#dailySubs");
 
 //counter constractor
-function counters(limit, target) {
-  let i = 0;
-  this.limit = limit;
-  this.target = target;
-  this.startCounter = setInterval(() => {
-    if (i <= limit) {
-      target.innerHTML = i++;
-    } else {
-      clearInterval();
-    }
-  }, 10 / 1000);
-}
+// function counters(limit, target) {
+//   let i = 0;
+//   this.limit = limit;
+//   this.target = target;
+//   this.startCounter = setInterval(() => {
+//     if (i <= limit) {
+//       target.innerHTML = i++;
+//     } else {
+//       clearInterval();
+//     }
+//   }, 10 / 1000);
+// }
 
-let objvideos = new counters(76, videos);
-let objsubscribers = new counters(435, subscibers);
-let objviews = new counters(500, views);
-let objdailySubs = new counters(100, dailySubs);
+// let objvideos = new counters(150, videos);
+// let objsubscribers = new counters(5450, subscibers);
+// let objviews = new counters(146727, views);
+// let objdailySubs = new counters(100, dailySubs);
 
 //SCROLL MAGIC
 // var controller = new ScrollMagic.Controller();

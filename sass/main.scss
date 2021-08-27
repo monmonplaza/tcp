@@ -255,9 +255,9 @@ span {
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     grid-gap: 3rem;
 
-    // @include mq(768px) {
-    //   grid-template-columns: repeat(1, 1fr);
-    // }
+    @include mq(768px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
   &__gridbox {
     width: 100%;
